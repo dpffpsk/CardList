@@ -7,8 +7,13 @@
 
 import UIKit
 import Kingfisher
+import FirebaseDatabase
 
 class CardListViewController: UITableViewController {
+    //Firebase Realtime Database
+    //데이터베이스의 루트
+    var ref: DatabaseReference!
+    
     var creditCardList: [CreditCard] = []
     
     override func viewDidLoad() {
@@ -17,6 +22,27 @@ class CardListViewController: UITableViewController {
         //(nibname 설정 후)cell register
         let nibName = UINib(nibName: "CardListCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "CardListCell")
+        
+        ref = Database.database().reference()
+        
+        ref.observe(.value) { snapshot in
+            guard let value = snapshot.value as? [String: [String: Any]] else { return }
+            
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: value)
+                let cardData = try JSONDecoder().decode([String: CreditCard].self, from: jsonData)
+                let cardList = Array(cardData.values)
+                self.creditCardList = cardList.sorted { $0.rank < $1.rank }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+            } catch let error {
+                print("ERROR JSON parsing \(error.localizedDescription)]")
+            }
+            
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,5 +64,14 @@ class CardListViewController: UITableViewController {
     //cell의 높이 지정
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    //상세화면 전달
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let detailViewController = storyboard.instantiateViewController(withIdentifier: "CardDetailViewController") as? CardDetailViewController else { return }
+        
+        detailViewController.promotionDetail = creditCardList[indexPath.row].promotionDetail
+        self.show(detailViewController, sender: nil)
     }
 }

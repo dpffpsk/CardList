@@ -17,6 +17,8 @@
 		851EC28E27683068009A3C43 /* CardListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851EC28C27683068009A3C43 /* CardListCell.swift */; };
 		851EC28F27683068009A3C43 /* CardListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 851EC28D27683068009A3C43 /* CardListCell.xib */; };
 		851EC29127685CDE009A3C43 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851EC29027685CDE009A3C43 /* CardDetailViewController.swift */; };
+		8535B3102769B135006D531F /* money.json in Resources */ = {isa = PBXBuildFile; fileRef = 8535B30F2769B134006D531F /* money.json */; };
+		8535B3122769CC68006D531F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8535B3112769CC67006D531F /* GoogleService-Info.plist */; };
 		C98E0A4B070C56D3DEA3B6D6 /* Pods_CreditCardList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA61D13C107C4A288338A48 /* Pods_CreditCardList.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		851EC28C27683068009A3C43 /* CardListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCell.swift; sourceTree = "<group>"; };
 		851EC28D27683068009A3C43 /* CardListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardListCell.xib; sourceTree = "<group>"; };
 		851EC29027685CDE009A3C43 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		8535B30F2769B134006D531F /* money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = money.json; sourceTree = "<group>"; };
+		8535B3112769CC67006D531F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ADA61D13C107C4A288338A48 /* Pods_CreditCardList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CreditCardList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3189DDCBA2E3702E8E4F910 /* Pods-CreditCardList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditCardList.release.xcconfig"; path = "Target Support Files/Pods-CreditCardList/Pods-CreditCardList.release.xcconfig"; sourceTree = "<group>"; };
 		ECD9BCC2BBD8BF5AF6E0DEE4 /* Pods-CreditCardList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditCardList.debug.xcconfig"; path = "Target Support Files/Pods-CreditCardList/Pods-CreditCardList.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				851EC27D27682929009A3C43 /* Assets.xcassets */,
 				851EC27F27682929009A3C43 /* LaunchScreen.storyboard */,
 				851EC28227682929009A3C43 /* Info.plist */,
+				8535B30F2769B134006D531F /* money.json */,
+				8535B3112769CC67006D531F /* GoogleService-Info.plist */,
 			);
 			path = CreditCardList;
 			sourceTree = "<group>";
@@ -164,7 +170,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				851EC28127682929009A3C43 /* LaunchScreen.storyboard in Resources */,
+				8535B3122769CC68006D531F /* GoogleService-Info.plist in Resources */,
 				851EC27E27682929009A3C43 /* Assets.xcassets in Resources */,
+				8535B3102769B135006D531F /* money.json in Resources */,
 				851EC27C27682925009A3C43 /* Main.storyboard in Resources */,
 				851EC28F27683068009A3C43 /* CardListCell.xib in Resources */,
 			);
