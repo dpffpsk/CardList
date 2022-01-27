@@ -109,7 +109,6 @@ class CardListViewController: UITableViewController {
         detailViewController.promotionDetail = creditCardList[indexPath.row].promotionDetail
         self.show(detailViewController, sender: nil)
         
-
 //        //Firebase Realtime Database 데이터 쓰기
 //        //Option1 : 경로를 알고 있을 경우
 //        //let cardID = creditCardList[indexPath.row].id
